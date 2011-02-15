@@ -1,0 +1,22 @@
+<% title "Move Types" %>
+
+<table class="span-12">
+  <tr>
+    <th class="span-3">Account</th>
+    <th class="span-4">Name</th>
+    <th class="span-1">Signum</th>
+    <th></th>
+  </tr>
+  <% for move_type in @move_types %>
+    <tr>
+      <td><%= move_type.account.name %></td>
+      <td><%= move_type.name %></td>
+      <td><%= move_type.income? %></td>
+      <td><%= link_to image_tag("edit.png"), edit_move_type_path(move_type) %>&nbsp;&nbsp;<%= link_to image_tag("delete.png"), move_type, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+  <tr>
+    <td colspan="5"><%= link_to "New Move Type", new_move_type_path(move_type) %></td>
+  </tr>
+</table>
+

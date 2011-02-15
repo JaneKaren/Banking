@@ -1,0 +1,36 @@
+<% title "Move" %>
+
+<p>
+  <strong>User:</strong>
+  <%= @move.user_id %>
+</p>
+<p>
+  <strong>Account:</strong>
+  <%= @move.account_id %>
+</p>
+<p>
+  <strong>Move Type:</strong>
+  <%= @move.move_type_id %>
+</p>
+<p>
+  <strong>Amount:</strong>
+  <%= @move.amount %>
+</p>
+<p>
+  <strong>Date:</strong>
+  <%= @move.date %>
+</p>
+<p>
+  <strong>Loan:</strong>
+  <%= @move.loan_id %>
+</p>
+<p>
+  <strong>Notice:</strong>
+  <%= @move.notice %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_move_path(@move) %> |
+  <%= link_to "Destroy", @move, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", moves_path %>
+</p>

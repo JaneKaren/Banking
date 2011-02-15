@@ -1,0 +1,18 @@
+<% title "My accounts" %>
+
+<table class="span-12">
+  <tr>
+    <th class="span-4">Name</th>
+    <th class="span-2">Income</th>
+    <th class="span-2">Expense</th>
+    <th class="span-2">Cash flow</th>
+  </tr>
+  <% for my_account in @my_accounts %>
+    <tr>
+      <td><%= my_account.name %></td>
+      <td><%= hogwartize(my_account.cf_show('in')) %></td>
+      <td><%= hogwartize(my_account.cf_show('ex')) %></td>
+      <td><%= hogwartize(my_account.cf_show('cf')) %></td>
+    </tr>
+  <% end %>
+</table>

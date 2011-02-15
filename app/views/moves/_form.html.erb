@@ -1,0 +1,28 @@
+<%= form_for @move do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label 'Account:' %><br />
+    <%= @account.name %>
+  </p>
+  <p>
+    <%= f.label :move_type_id %><br />
+    <%= collection_select(:move, :move_type_id, @account.move_types, :id, :name)  %>
+  </p>
+  <p>
+    <%= f.label :amount %><br />
+    <%= text_field_tag( "amount", @amount ) %>
+  </p>
+  <p>
+    <%= f.label :date %><br />
+    <%= calendar_date_select_tag "date", @move.date %>
+  </p>
+<!--  <p>
+    <%= f.label :loan_id %><br />
+    <%= f.text_field :loan_id %>
+  </p>-->
+  <p>
+    <%= f.label :notice %><br />
+    <%= f.text_field :notice %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

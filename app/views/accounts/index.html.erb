@@ -1,0 +1,17 @@
+<% title "Accounts" %>
+
+<table class="span-12">
+  <tr>
+    <th class="span-10">Name</th>
+    <th colspan="2"></th>
+  </tr>
+  <% for account in @accounts %>
+    <tr>
+      <td><%= account.name %></td>
+      <td><%= link_to image_tag("edit.png"), edit_account_path(account) %></td>
+      <td><%= link_to image_tag("delete.png"), account, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+<tr><td><%= link_to "New Account", new_account_path(account) %></td></tr>
+</table>
+

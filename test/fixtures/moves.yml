@@ -1,0 +1,17 @@
+one:
+  user_id: 1
+  account_id: 1
+  move_type_id: 1
+  amount: 9.99
+  date: 2011-01-26
+  loan_id: 1
+  notice: MyString
+
+two:
+  user_id: 1
+  account_id: 1
+  move_type_id: 1
+  amount: 9.99
+  date: 2011-01-26
+  loan_id: 1
+  notice: MyString

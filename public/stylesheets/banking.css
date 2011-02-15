@@ -1,0 +1,261 @@
+/*
+  Barvy pro FULLCOLOR
+  SMART modrá (od tmavé do světlé) #222277 #BBBBDD #DDDDEE 
+   SMART červená  	#CC2222 	#EEBBBB    	#FFDDDD
+	Rothschild modrá   #00CCFF 	   #AAEEFF 	   #DDFFFF 	   
+	
+	Barvy pro terminal (256 barev)
+Tmavě modrá 	  										#333399 	#6666CC 	#9999FF  
+Tmavě červená (class - Neuhrazeno) 	#990000 	#CC3333 	#FF6666
+Modrá (class - Aktivni,Normal) 			#339999 	#66CCCC 	#CCFFFF
+Hnědá (class - Neaktivni, Uhrazeno) #996633 	#CC9966 	#FFCC99
+Zlutá (class - Aktualni) 						#999933 	#CCCC66		#FFFF99
+Zelena (class- nesplacenoCele)			#339933 	#66CC66 	#CCFFCC 
+Sediva (class - neaktualni)					#666666		#999999		#CCCCCC
+*/
+
+body {
+    background-color:white; 
+    color: black; 
+    font-family: Arial, Helvetica, sans-serif; 
+    font-size: 0.9em; 
+    font-style: normal; 
+    font-weight: normal;
+    padding: 10px
+}
+.screenonly	{visibility:visible}
+.printonly {visibility:hidden; width:0px; height:0px}
+
+.container {
+    margin: 10 10 10 10;
+}
+a:link {text-decoration: underline; color: #666666}
+a:visited { text-decoration: underline; color: #777777}
+a:active { text-decoration: underline; color: #777777}
+a:hover {text-decoration: underline overline; color: #777777}
+
+h1 { 
+    background-color: #666666;
+    color: white; 
+    font-size: 140%; 
+    font-style: normal; 
+    font-weight: bold; 
+    text-align: left; 
+    margin: 0 0 10px 0 ; 
+    padding: 3px;
+}
+
+h1.aktivni {background-color: #339999;}
+
+h1.ukonceno {background-color: #996633;}
+
+h1 a:link {color:white;text-decoration: underline;}
+h1 a:visited {color:white;text-decoration: underline;}
+h1 a:hover {color:white;text-decoration: underline overline;}
+
+h2 { font-size: 130%; color: #339999; font-style: normal; font-weight: bold; text-align: left; margin: 0.2em; padding: 0em }
+h3 { font-size: 110%; font-style: normal; font-weight: bold; text-align: left; margin: 0.1em 0.3em 0.3em 0.1em}
+
+ul {margin:0px; padding-left:2em;}
+li {padding-left:0.2em;}
+fieldset {border: 1px solid lightgrey; margin-bottom:1em; padding:0.5em}
+legend {font-weight:bold; color: #339999}
+th {background-color:black; color: white}
+hr {color: #lightgrey; width:100%; height: 1px}
+em {color: #339999; font-style:normal};
+.error {color: #FF6666}
+.warning {color: #990000; font-weight:bold;}
+.potlaceno {color:grey}
+.nepotlaceno {color:black}
+.podbarveno {background-color: #339999;}
+.podbarvenyInput {background-color: #CCFFFF; color: black}
+.aktivni {background-color: #CCFFFF;}
+.ukonceno {background-color: #FFCC99;}
+.poznamka {font-size:80%;}
+.cislo {text-align: right;}
+
+/****** OBSAH *******/
+#obsah {width:86%; float:right}/*jako velikost menu+1 */
+
+.sloupecVlevo {
+	width:48%;
+	float:left;
+	clear:left;
+	overflow:hidden;
+	}
+
+.sloupecVpravo {
+	width:48%;
+	float:right;
+	clear:right;
+	overflow:hidden;
+	}
+	
+
+.platbyVypis {width:100%}
+.platbyVypis th{font-size: 90%; margin:0 ; padding: 0}
+.platbyVypis td{font-size: 90%; margin:0 ; padding: 0}
+/*.osobaForm {width:500px}
+*/
+.veritelSelect {background-color: #CCFFFF; color: black}
+.ozSelect {background-color: #CCFFFF; color: black}
+
+#v1_osoba_label {font-weight:bold; color: #339999}
+
+/*** Detaily osoby ***/
+
+#detailniOsobniData {
+	font-weight: normal;
+	padding:0.7em;
+	border: 1px solid #339999; 
+	}
+	
+.clearing {clear:both; margin:0em;}
+
+.ramecek {
+	min-width: 5em;
+	border: 1px solid lightgrey;
+	margin: 0.1em 0.2em 0.1em 0.2em;
+	padding: 0.3em;
+	overflow: hidden;
+	} 
+
+	
+.veritelInfo {
+	overflow:hidden;
+	}
+.veritelInfo td {font-size:90%}
+
+.pravySloupecSmlouvy {
+	width: 50%;
+	float:right;
+	clear:right;
+}
+
+.levySloupecSmlouvy {
+	width: 44%;
+ 	float:left;
+	clear:left;
+}
+
+/*#log {}/* width:1px; height:1px}	*/
+#log {display:none;}
+/*** DODATEK SMLOUVY ***/
+/*.dodatekSmlouvy {margin-bottom: 0.1em; padding-bottom:0.1em}
+*/
+.listVeritelu {margin:0px; padding-left:2em;}
+.listVeritelu li {padding-left:0.2em;}
+.obsahDodatku legend {font-weight: normal; font-style:normal; color: black}
+.obsahDodatku {font-style:italic}
+.obsahDodatku  {margin-bottom:0.1em}
+
+/**** PLATBY ***/
+.platbyVypis {font-size:90%}
+.platbyVypis th {padding:0.1em}
+.platbaNam {background-color: #CCFFCC}
+.platbaVen {background-color: #FFCCCC}
+
+.doprava {float: right; clear: right}
+.doleva {float: left; clear: left}
+
+/******** TABULKY SEZNAMU ********/
+/* hovered table rows */
+.seznam {font-size: 90%; margin:0 ; padding: 0}
+.seznam th {font-style: normal; font-weight: bold; background-color: black; color: white; padding:2px}
+.seznam th a {text-decoration: underline}
+.seznam tr {background-color: lightgrey;}
+.seznam td {padding:2px;}
+.seznam tr.lichyRadek {background-color: #CCFFFF;}
+.seznam tr.sudyRadek {background-color: #CCFFFF;}
+.seznam tr.lichyRadekHnedy {background-color: #FFCC99;}
+.seznam tr.sudyRadekModry {background-color: #BEBEFA;}
+.seznam tr.lichyRadekModry {background-color: #BEBEFA;}
+.klikaci td{cursor:hand}
+/*
+.sudyRadek {background-color: #66CCCC; color:black}
+.sudyRadek a{color:#000000}
+.sudyRadek a:visited{color:#000000}
+*/
+.sudyRadek {background-color: #CCFFFF; color:black}
+.sudyRadek a{color:black}
+.sudyRadek a:visited{color:black}
+
+.lichyRadek {background-color: #CCFFFF; color:black}
+.lichyRadek a{color:black}
+.lichyRadek a:visited{color:black}
+
+/*
+.sudyRadekHnedy {background-color: #CC9966; color:black}
+.sudyRadekHnedy a{color:#000000}
+.sudyRadekHnedy a:visited{color:#000000}
+*/
+.sudyRadekHnedy {background-color: #FFCC99; color:black}
+.sudyRadekHnedy a{color:black}
+.sudyRadekHnedy a:visited{color:black}
+
+.lichyRadekHnedy {background-color: #FFCC99; color:black}
+.lichyRadekHnedy a{color:black}
+.lichyRadekHnedy a:visited{color:black}
+
+/* zvyrazneni smluv mezi vlastnimi firmami*/
+.sudyRadekModry {background-color: #BEBEFA; color:black}
+.sudyRadekModry a{color:black}
+.sudyRadekModry a:visited{color:black}
+
+.lichyRadekModry {background-color: #FAFAFA; color:black}
+.lichyRadekModry a{color:black}
+.lichyRadekModry a:visited{color:black}
+
+table tr.sudyRadek:hover {background-color: #FFFFFF} /* vsechny browsery krom IE, to je delano javascriptem v _system.js */
+table tr.lichyRadek:hover {background-color: #FFFFFF} /* vsechny browsery krom IE, to je delano javascriptem v _system.js */
+table tr.hover {background-color: #FFFFFF} /* hack pro IE, spolupracuje s JS funkci PMA_markRowsInit()*/
+.bunka_nahoru td {vertical-align:top;}
+.bunka_stred td {vertical-align: middle;}
+
+/******** PATA STRANKY ******/
+#pataStranky {clear: both; font-size:80%; text-align: left; margin-top:1em; padding: 1em}
+
+/* simple_form gem jpa */
+.simple_form label {
+  float: left;
+  width: 150px;
+  text-align: right;
+  margin: 2px 1px;
+}
+
+.simple_form div.input {
+  margin-bottom: 1px;
+}
+
+.simple_form div.boolean, .simple_form input[type='submit'] {
+  margin-left: 120px;
+}
+
+.simple_form div.boolean label, .simple_form label.collection_radio {
+  float: none;
+  margin: 0;
+}
+
+.simple_form label.collection_radio {
+  margin-right: 10px;
+  margin-left: 2px;
+}
+
+.simple_form .error {
+  clear: left;
+  margin-left: 120px;
+  font-size: 12px;
+  color: #D00;
+  display: block;
+}
+
+.simple_form .hint {
+  clear: left;
+  margin-left: 120px;
+  font-size: 12px;
+  color: #555;
+  display: block;
+  font-style: italic;
+}
+/* konec simple_form gem */
+

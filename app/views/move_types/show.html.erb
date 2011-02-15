@@ -1,0 +1,19 @@
+<% title "Move Type" %>
+
+<p>
+  <strong>Account:</strong>
+  <%= @move_type.account.name %>
+</p>
+<p>
+  <strong>Name:</strong>
+  <%= @move_type.name %>
+</p>
+<p>
+  <strong>Income?:</strong>
+  <%= @move_type.income %>
+</p>
+
+<p>
+  <%= link_to image_tag("edit.png"), edit_move_type_path(@move_type) %> |
+  <%= link_to image_tag("delete.png"), @move_type, :confirm => 'Are you sure?', :method => :delete %>
+</p>

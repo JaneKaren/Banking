@@ -1,0 +1,24 @@
+<% title "Users" %>
+
+<fieldset class="span-11">
+  <table>
+    <tr>
+      <th class="span-3">Username</th>
+      <th class="span-4">Email</th>
+      <th class="span-1">Admin</th>
+      <th class="span-1"></th>
+      <th class="span-1"></th>
+    </tr>
+    <% for user in @users %>
+      <tr>
+        <td><%= user.username %></td>
+        <td><%= user.email %></td>
+        <td><%= check_box_tag "admin", "", user.admin %></td>
+        <td><%= link_to image_tag("edit.png"), edit_user_path(user) %></td>
+        <td><%= link_to image_tag("delete.png"), user, :confirm => 'Really?', :method => :delete %></td>
+      </tr>
+    <% end %>
+  </table>
+  <%= link_to "New user", new_user_path %>
+</fieldset>
+

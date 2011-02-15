@@ -1,0 +1,21 @@
+<table class="span-12">
+  <tr>
+    <th class="span-4">User</th>
+    <th class="span-4">Account</th>
+    <th></th>
+  </tr>
+  <% for user in @users do %>
+    <tr>
+      <td><%= user.username %></td>
+      <td>
+        <% for acc in user.accounts do %>
+          <table>
+            <tr>
+              <td><%= acc.name %></td>
+            </tr>
+          </table>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>

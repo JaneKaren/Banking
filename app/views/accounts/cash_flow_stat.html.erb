@@ -1,0 +1,19 @@
+<% title "Cash flow statistics" %>
+
+<%= form_tag :action => 'cf_stat' do %>
+  <table class="span-15">
+    <tr>
+      <th class="span-2">Account:</th>
+      <th class="span-10" colspan="3"><%= collection_select(:cf, :account_id, @accounts, :id, :name) %></th>
+    </tr>
+    <tr>
+      <td>Date from:</td>
+      <td><%= calendar_date_select_tag "cf_from", 1.month.ago %></td>
+      <td>to:</td>
+      <td><%= calendar_date_select_tag "cf_to", Date.today %></td>
+    </tr>
+    <tr>
+      <td colspan="4"><%= submit_tag 'Show' %></td>
+    </tr>
+  </table>
+<% end %>

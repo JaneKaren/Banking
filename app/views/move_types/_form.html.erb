@@ -1,0 +1,15 @@
+<%= form_for @move_type do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= collection_select(:move_type, :account_id, current_user.accounts, :id, :name)  %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :income %><br />
+    <%= f.check_box :income %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

@@ -1,0 +1,10 @@
+<%= form_for @account do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p><%= collection_select(:user, :user_id, User.all, :id, :username, :prompt => "Choose user") %></p>
+  <p><%= f.submit %></p>
+<% end %>
+

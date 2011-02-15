@@ -1,0 +1,10 @@
+<%= form_tag :action => 'change_pass', :id => @user do %>
+  <table class="span-15">
+    <tr><th class="span-3">User: <%= "#{@user.username}" %></th><th class="span-3"></th></tr>
+    <tr><td>Email:</td><td><%= text_field( 'user','email')%></td></tr>
+    <tr><td>Old pass:</td><td><%= password_field( 'password','old')%>*</td></tr>
+    <tr><td>New password:</td><td><%= password_field( 'user','password', :limit => 40)%></td></tr>
+    <tr><td>Password confirmation:</td><td><%= password_field( 'user','password_confirmation', :limit => 40)%></td></tr>
+    <tr><td colspan="2"><%= submit_tag 'Change' %></td></tr>
+  </table>
+<% end %>

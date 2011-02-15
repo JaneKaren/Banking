@@ -1,0 +1,13 @@
+<tr>
+  <td>Amount:</td>
+  <td><%= @move_type.income? %>&nbsp;<%= text_field('move', 'money') %></td>
+  <td>GAL-SIC-KNU</td>
+</tr>
+<tr>
+  <td>Date:</td>
+  <td colspan="2"><%= calendar_date_select_tag 'date', Date.today %></td>
+</tr>
+<tr>
+  <td>Notice:</td>
+  <td colspan="2"><%= text_field('move', 'notice') %></td>
+</tr>

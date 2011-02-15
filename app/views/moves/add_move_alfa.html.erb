@@ -1,0 +1,17 @@
+<% title "Add Move 1" %>
+
+<%= form_tag :action => 'add_move_beta', :acc => @account do %>
+  <table class="span-7">
+    <tr>
+      <th class="span-4">Account:</th>
+      <th class="span-3"><%= "#{@account.name}" %></th>
+    </tr>
+    <tr>
+      <td>Move type:</td>
+      <td><%= collection_select(:move, :move_type_id, @move_types, :id, :name)  %></td>
+    </tr>
+    <tr>
+      <td colspan="2"><%= submit_tag 'Next' %></td>
+    </tr>
+  </table>
+<% end %>

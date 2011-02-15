@@ -1,0 +1,25 @@
+<% title "Cash flow for #{@account.name} from #{format_date(@from)} to #{format_date(@to)}" %>
+
+<table class="span-13">
+  <tr>
+    <th class="span-1">Income:</th>
+    <th class="span-3"><%= hogwartize(@cf[:in]) %></th>
+    <th class="span-1">Expense:</th>
+    <th class="span-3"><%= hogwartize(@cf[:ex]) %></th>
+    <th class="span-1">Profit:</th>
+    <th class="span-3"><%= hogwartize(@cf[:profit]) %></th>
+  </tr>
+</table>
+
+<table class="span-8">
+  <tr>
+    <th class="span-5">Move type</th>
+    <th colspan="2" class="span-3">Amount</th>
+  </tr>
+  <% @mts.each do |mt| %>
+    <tr>
+      <td><%= mt.name %></td>
+      <td><%= mt.income? %>&nbsp;&nbsp;<%= hogwartize(mt.suma.to_i) %></td>
+    </tr>
+  <% end %>
+</table>
