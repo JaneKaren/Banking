@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery
 
-  PER_PAGE = 10
+  PER_PAGE = 20
 
   helper_method :admin?  #aby to slo pouzit i ve view
   def admin?
