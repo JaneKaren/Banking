@@ -4,12 +4,16 @@ module HogwartsHelper
   HOG_KNU = 1
 
   def hogwartize(amount)
+    if amount < 0
+      amount *= -1
+      sgn = '-'
+    end
     gal = amount/HOG_GAL
     amount -= gal*HOG_GAL
     sic = amount/HOG_SIC
     amount -= sic*HOG_SIC
     knu = amount/HOG_KNU
-    return "#{gal}-#{sic}-#{knu}"
+    return "#{sgn} #{gal}-#{sic}-#{knu}"
   end
 
   def dehogwartize(money)
