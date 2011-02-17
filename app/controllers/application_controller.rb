@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery
 
-  PER_PAGE = 20
+  PER_PAGE = 15
 
   helper_method :admin?  #aby to slo pouzit i ve view
   def admin?
@@ -20,4 +20,5 @@ class ApplicationController < ActionController::Base
   def zapis_uzivatele_do_logu
     logger.info("\n-----------------------------------------------------\nV #{format_date_time(Time.now)}  provadi uzivatel #{(current_user.blank? ? request.env['REMOTE_HOST'] : current_user.username)}, kontroler #{params[:controller]}::#{params[:action]} id=#{params[:id]} akce=#{params[:akce]}\n-----------------------------------------------------\n ")
   end
+  
 end

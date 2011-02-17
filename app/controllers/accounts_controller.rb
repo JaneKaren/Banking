@@ -61,6 +61,10 @@ class AccountsController < ApplicationController
     @account = Account.find(params[:cf][:account_id])
     @from = params[:cf_from].to_date
     @to = params[:cf_to].to_date
+
+    @starting = @account.amount_to_date(@from)
+    @ending = @account.amount_to_date(@to)
+    @profitting = @ending - @starting
     
     @cf = @account.cash_flow(@from, @to)
 

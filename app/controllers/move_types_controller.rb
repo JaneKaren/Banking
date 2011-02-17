@@ -2,6 +2,7 @@ class MoveTypesController < ApplicationController
   def index
     if allowed_acc(params[:acc])
       @move_types = MoveType.account_move_types([params[:acc]])
+      @account = Account.find(params[:acc])
     else
       notallowed
     end

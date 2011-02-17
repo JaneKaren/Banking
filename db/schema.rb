@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 106) do
+ActiveRecord::Schema.define(:version => 16122011) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name",       :null => false
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(:version => 106) do
     t.integer  "move_type_id"
     t.decimal  "amount",       :precision => 10, :scale => 0, :default => 0
     t.date     "date"
-    t.integer  "loan_id"
+    t.integer  "person_id"
     t.string   "notice",                                      :default => ""
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -41,6 +41,18 @@ ActiveRecord::Schema.define(:version => 106) do
   create_table "ownerships", :force => true do |t|
     t.integer  "user_id"
     t.integer  "account_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "people", :force => true do |t|
+    t.string   "name"
+    t.string   "house"
+    t.boolean  "frozen",      :default => false
+    t.date     "frozen_date"
+    t.boolean  "deleted",     :default => false
+    t.date     "delete_date"
+    t.integer  "year"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

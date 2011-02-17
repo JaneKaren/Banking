@@ -1,0 +1,36 @@
+<% title "Person" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @person.name %>
+</p>
+<p>
+  <strong>House:</strong>
+  <%= @person.house %>
+</p>
+<p>
+  <strong>Frozen:</strong>
+  <%= @person.frozen %>
+</p>
+<p>
+  <strong>Frozen Date:</strong>
+  <%= @person.frozen_date %>
+</p>
+<p>
+  <strong>Deleted:</strong>
+  <%= @person.deleted %>
+</p>
+<p>
+  <strong>Delete Date:</strong>
+  <%= @person.delete_date %>
+</p>
+<p>
+  <strong>Year:</strong>
+  <%= @person.year %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_person_path(@person) %> |
+  <%= link_to "Destroy", @person, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", people_path %>
+</p>

@@ -16,10 +16,10 @@
     <%= f.label :date %><br />
     <%= calendar_date_select_tag "date", @move.date %>
   </p>
-<!--  <p>
-    <%= f.label :loan_id %><br />
-    <%= f.text_field :loan_id %>
-  </p>-->
+  <p>
+    <%= f.label :person_id %><br />
+    <%= collection_select(:move, :person_id, Person.active.obyname, :id, :whole_name) %>
+  </p>
   <p>
     <%= f.label :notice %><br />
     <%= f.text_field :notice %>

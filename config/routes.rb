@@ -1,4 +1,7 @@
 Banking::Application.routes.draw do
+  resources :people
+  match 'people_house' => 'people#people_house', :as => :people_house
+
   resources :moves
   match 'acc_moves' => 'moves#acc_moves', :as => :acc_moves
   match 'add_move_alfa' => 'moves#add_move_alfa', :as => :add_move_alfa
@@ -79,7 +82,7 @@ Banking::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => "sessions#new"
+   root :to => 'accounts#my_accounts'
 
   # See how all your routes lay out with "rake routes"
 

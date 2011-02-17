@@ -1,6 +1,6 @@
 class MovesController < ApplicationController
   def index
-    @moves = Move.mine([current_user]).order('date desc').paginate(:per_page => PER_PAGE, :page => params[:page])
+    @moves = Move.mine([current_user]).obydateamount.paginate(:per_page => PER_PAGE, :page => params[:page])
   end
 
   def show
@@ -51,9 +51,9 @@ class MovesController < ApplicationController
     if allowed_acc(params[:acc])
       @account = find_account
       if params[:mtp]
-        @moves = Move.account_moves([params[:acc]]).acc_moves_by_type([params[:mtp]]).order("date desc").paginate(:per_page => PER_PAGE, :page => params[:page])
+        @moves = Move.account_moves([params[:acc]]).acc_moves_by_type([params[:mtp]]).obydateamount.paginate(:per_page => PER_PAGE, :page => params[:page])
       else
-        @moves = Move.account_moves([params[:acc]]).order("date desc").paginate(:per_page => PER_PAGE, :page => params[:page])
+        @moves = Move.account_moves([params[:acc]]).obydateamount.paginate(:per_page => PER_PAGE, :page => params[:page])
       end
     else
       notallowed
@@ -84,10 +84,6 @@ class MovesController < ApplicationController
     else
       redirect_to moves_url
     end
-  end
-
-  def add_move
-    puts "hi"
   end
 
 private

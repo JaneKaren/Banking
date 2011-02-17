@@ -1,0 +1,32 @@
+<%= form_for @person do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :house %><br />
+    <%= f.text_field :house %>
+  </p>
+  <p>
+    <%= f.label :frozen %><br />
+    <%= f.check_box :frozen %>
+  </p>
+  <p>
+    <%= f.label :frozen_date %><br />
+    <%= f.calendar_date_select :frozen_date %>
+  </p>
+  <p>
+    <%= f.label :deleted %><br />
+    <%= f.check_box :deleted %>
+  </p>
+  <p>
+    <%= f.label :delete_date %><br />
+    <%= f.calendar_date_select :delete_date %>
+  </p>
+  <p>
+    <%= f.label :year %><br />
+    <%= f.text_field :year %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

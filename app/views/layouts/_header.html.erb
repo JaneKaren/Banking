@@ -3,16 +3,16 @@
 
     <li class="Bankingi"><a><%= current_user.username %></a>
       <ul class="Bankingm">
-        <li class="Bankingi"><%= link_to 'Change password',:controller => 'users', :action => 'change_pass_f' %></li>
+        <li class="Bankingi"><%= link_to 'Change password', change_pass_f_url %></li>
       </ul>
     </li>
 
-    <li class="Bankingi"><%= link_to 'My accounts',:controller => 'accounts', :action => 'my_accounts' %></li>
+    <li class="Bankingi"><%= link_to 'My accounts', my_accounts_url %></li>
 
     <li class="Bankingi"><a class="Bankingi" href="#"><span>Move types</span></a>
       <ul class="Bankingm">
         <% for acc in current_user.accounts do %>
-          <li class="Bankingi"><%= link_to acc.name, :controller => 'move_types', :action => 'index', :acc => acc.id %></li>
+          <li class="Bankingi"><%= link_to acc.name, move_types_url(:acc => acc.id) %></li>
         <% end %>
       </ul>
     </li>
@@ -20,21 +20,34 @@
     <li class="Bankingi"><a class="Bankingi" href="#"><span>Moves</span></a>
       <ul class="Bankingm">
         <li class="Bankingi"><%= link_to 'All my moves', moves_url %>
-        <% for acc in current_user.accounts do %>
-          <li class="Bankingi"><span><%= link_to acc.name, :controller => 'moves', :action => 'acc_moves', :acc => acc.id %></span>
-            <ul class="Bankingm">
-              <% for mtp in acc.move_types do %>
-                <li class="Bankingi"><%= link_to mtp.name, :controller => 'moves', :action => 'acc_moves', :acc => acc.id, :mtp => mtp.id %>
-              <% end %>
-            </ul>
-          </li>
-        <% end %>
+          <% for acc in current_user.accounts do %>
+            <li class="Bankingi"><span><%= link_to acc.name, acc_moves_url(:acc => acc.id) %></span>
+              <ul class="Bankingm">
+                <% for mtp in acc.move_types do %>
+                  <li class="Bankingi"><%= link_to mtp.name, acc_moves_url(:acc => acc.id, :mtp => mtp.id) %>
+                <% end %>
+              </ul>
+            </li>
+          <% end %>
+        </li>
       </ul>
     </li>
 
     <li class="Bankingi"><a><span>Statistics</span></a>
       <ul class="Bankingm">
-        <li class="Bankingi"><%= link_to 'Cash flow',:controller => 'accounts', :action => 'cash_flow_stat' %></li>
+        <li class="Bankingi"><%= link_to 'Cash flow', cash_flow_stat_url %></li>
+      </ul>
+    </li>
+    
+    <li class="Bankingi"><a><span>People</span></a>
+      <ul class="Bankingm">
+        <li class="Bankingi"><span><%= link_to 'List', people_url %></span>
+          <ul class="Bankingm">
+            <% for house in Person.select('DISTINCT house') do %>
+              <li class="Bankingi"><%= link_to house.house, people_house_url(:house => house.house) %></li>
+            <% end %>
+          </ul>
+        </li>
       </ul>
     </li>
     
@@ -43,7 +56,7 @@
       <ul class="Bankingm">
         <li class="Bankingi"><%= link_to 'Users', users_url %></li>
         <li class="Bankingi"><%= link_to 'Accounts', accounts_url %></li>
-        <li class="Bankingi"><%= link_to 'User/Accounts', :controller => 'users', :action => 'user_account_list' %></li>
+        <li class="Bankingi"><%= link_to 'User/Accounts',  user_account_list_url %></li>
       </ul>
     </li>
 <% end %>

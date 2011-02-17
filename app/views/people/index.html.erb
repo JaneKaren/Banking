@@ -1,0 +1,31 @@
+<% title "People" %>
+
+<table class="span-20">
+  <tr>
+    <th>Name</th>
+    <th>House</th>
+    <th>Frozen</th>
+    <th>Frozen Date</th>
+    <th>Deleted</th>
+    <th>Delete Date</th>
+    <th>Year</th>
+    <th></th>
+  </tr>
+  <% for person in @people %>
+    <tr>
+      <td><%= person.name %></td>
+      <td><%= person.house %></td>
+      <td><%= person.is_frozen? %></td>
+      <td><%= person.frozen_date %></td>
+      <td><%= person.is_deleted? %></td>
+      <td><%= person.delete_date %></td>
+      <td><%= person.year %></td>
+      <td><%= link_to image_tag("edit.png"), edit_person_path(person) %></td>
+    </tr>
+  <% end %>
+    <tr>
+      <td colspan="8"><%= will_paginate @moves %></td>
+    </tr>
+</table>
+
+<p><%= link_to "New Person", new_person_path(person) %></p>

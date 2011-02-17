@@ -7,24 +7,6 @@ class Account < ActiveRecord::Base
   has_many :move_types
   has_many :moves
 
-#  def cash_flow(what = 'cf', from = 100.years.ago, to = 100.years.since)
-#    income = 0
-#    expense = 0
-#    @moves = self.moves.where('date BETWEEN ? AND ?', from, to)
-#    for move in @moves do
-#      if move.move_type.income
-#        income += move.amount
-#      else
-#        expense += move.amount
-#      end
-#    end
-#    case what
-#    when 'in' then return income
-#    when 'ex' then return expense
-#    when 'cf' then return income - expense
-#    end
-#  end
-
   def cash_flow(from = 100.years.ago, to = 100.years.since)
     cf = {}
     income = 0
@@ -67,6 +49,19 @@ class Account < ActiveRecord::Base
       i+=1
     end
     return mts_hash
+  end
+
+  def amount_to_date(date = Date.today)
+    moves = self.moves.where('date <= ?', date)
+    sum_to_date = 0
+    for move in moves do
+      if move.move_type.income
+        sum_to_date += move.amount
+      else
+        sum_to_date -= move.amount
+      end
+    end
+    return sum_to_date
   end
   
 end

@@ -11,3 +11,7 @@
   <td>Notice:</td>
   <td colspan="2"><%= text_field('move', 'notice') %></td>
 </tr>
+<tr>
+  <td>Person:</td>
+  <td colspan="2"><%= collection_select(:move, :person_id, Person.active.obyname, :id, :whole_name)  %></td>
+</tr>
